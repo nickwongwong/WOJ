@@ -5,7 +5,7 @@ import java.util.Scanner;
 /* Copyright(C) 2014,Cao Qingqing , Wuhan University
  * All rights reserved.
  *	
- * This class is submitted for solving the problem 1002 
+ * This class is submitted for solving the problem 1003 
  * in WOJ
  * 
  * Author: Qingqing Cao, Computer School, Wuhan University
