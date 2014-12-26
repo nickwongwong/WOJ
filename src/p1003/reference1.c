@@ -1,3 +1,6 @@
+/*original copyright by 2009301500022
+ * please do not copy this code for submission!
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

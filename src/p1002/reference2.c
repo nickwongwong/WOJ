@@ -1,3 +1,6 @@
+/*original copyright by 2009302530022
+ * please do not copy this code for submission!
+ */
 #include <stdio.h>
 #include <ctype.h>
 int main()
