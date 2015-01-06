@@ -48,12 +48,18 @@ public class Main {
 			}
 			double length = convertUnit(num[0], unit[0]);
 			double width = convertUnit(num[1], unit[1]);
+
 			if (Math.abs(length - 6 * width) < 1e-9)
 				System.out.println("Excellent");
 			else if (Math.abs(length - width) < 1e-9)
-				System.out.println("Spin");
-			else
-				System.out.println("Neither");
+
+				if (Math.abs(length - 6 * width) < 0.000001)
+					System.out.println("Excellent");
+				else if (Math.abs(length - width) < 0.000001)
+
+					System.out.println("Spin");
+				else
+					System.out.println("Neither");
 
 			System.out.println();
 		}
