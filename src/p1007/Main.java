@@ -7,7 +7,7 @@ import java.util.Scanner;
  * 
  * This class is submitted for solving the problem 1007 in WOJ
  * 
- * @author : Qingqing Cao, Computer School, Wuhan University Time: 201-01-06
+ * @author : Qingqing Cao, Computer School, Wuhan University
  * 
  */
 public class Main {
