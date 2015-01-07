@@ -29,6 +29,7 @@ public class Main {
 
 		int i;
 		int flag = 1;
+
 		int top = 0;
 		int pos = 1;
 		while (k > 0) {
@@ -50,7 +51,6 @@ public class Main {
 				if (graph[i][j] == 1 && visited[j] != 1) {
 					queue[pos++] = j;
 					k++;
-					visited[j] = 1;
 				}
 			}
 
