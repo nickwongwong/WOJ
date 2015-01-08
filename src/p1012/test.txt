@@ -1,0 +1,12 @@
+2 3
+bbb
+www
+2 2
+bw
+wb
+5 7
+bwbwbbw
+bwwwbwb
+bwwbwwb
+wwbbbww
+bwbwbbw
