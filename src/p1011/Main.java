@@ -1,5 +1,6 @@
 package p1011;
 
+import java.math.BigInteger;
 import java.util.Scanner;
 
 /**
@@ -11,35 +12,37 @@ import java.util.Scanner;
  * 
  */
 public class Main {
-	static long A(int n) {
-		long r = 1;
+	static BigInteger A(int n) {
+		BigInteger r = BigInteger.ONE;
 		for (int i = 1; i <= n; i++) {
-			r *= i;
+			r = r.multiply(new BigInteger(i + ""));
 		}
 		return r;
 	}
 
-	static long C(int n, int k) {
+	static BigInteger C(int n, int k) {
 
-		return A(n) / (A(k) * A(n - k));
+		return A(n).divide(A(k).multiply(A(n - k)));
 	}
 
-	static long f(int n) {
+	static BigInteger f(int n) {
 		if (n == 0)
-			return 0;
+			return BigInteger.ZERO;
 
 		if (n == 1 || n == 2 || n == 3)
-			return 1;
+			return BigInteger.ONE;
 
-		long tp = 0;
+		BigInteger tp;
 		if (n % 3 != 1)
 			tp = f(n - 1);
 		else
-			tp = 0;
+			tp = BigInteger.ZERO;
 
-		for (int i = 1; i <= n / 3; i++)
-			tp = tp + f(i * 3 - 1) * f(n - i * 3) * C(n - 1, i * 3 - 1);
+		for (int i = 1; i <= n / 3; i++) {
+			tp = tp.add(f(i * 3 - 1).multiply(f(n - i * 3)).multiply(
+					C(n - 1, i * 3 - 1)));
 
+		}
 		return tp;
 
 	}
@@ -47,10 +50,10 @@ public class Main {
 	public static void main(String args[]) {
 		Scanner input = new Scanner(System.in);
 		while (input.hasNext()) {
+
 			System.out.println(f(input.nextInt()));
 		}
 
 		input.close();
 	}
-
 }
