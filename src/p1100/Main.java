@@ -17,46 +17,50 @@ public class Main {
 		int cases = input.nextInt();
 		String[] name = { "littleken", "knuthocean", "dongfangxu", "zap",
 				"kittig", "robertcui", "forest", "flirly" };
-		int[] no = new int[name.length];
 
 		while (cases-- > 0) {
-			char[] c = (input.next() + " ").toCharArray();
+			char[] c = input.next().toCharArray();
 			int maxVal = 0;
 			int maxIndex = 0;
 			int j = 0;
+			int[] no = new int[name.length];
 			while (j < c.length) {
-
-				if (c[j] == 'z') {
-					no[3]++;
-					j += 3;
-				}
-				if (c[j] == 'd') {
-					no[2]++;
-					j += 10;
-				}
-				if (c[j] == 'l') {
+				switch (c[j]) {
+				case 'l':
 					no[0]++;
 					j += 9;
-				}
-				if (c[j] == 'k' && c[j + 1] == 'n') {
-					no[1]++;
+					break;
+				case 'k':
+					if (c[j + 1] == 'n') {
+						no[1]++;
+						j += 10;
+					} else {
+						no[4]++;
+						j += 6;
+					}
+					break;
+				case 'd':
+					no[2]++;
 					j += 10;
-				}
-				if (c[j] == 'k' && c[j + 1] == 'i') {
-					no[4]++;
-					j += 6;
-				}
-				if (c[j] == 'r') {
+					break;
+				case 'z':
+					no[3]++;
+					j += 3;
+					break;
+				case 'r':
 					no[5]++;
 					j += 9;
-				}
-				if (c[j] == 'f' && c[j + 1] == 'o') {
-					no[6]++;
-					j += 6;
-				}
-				if (c[j] == 'f' && c[j + 1] == 'l') {
-					no[7]++;
-					j += 6;
+					break;
+				case 'f':
+					if (c[j + 1] == 'o') {
+						no[6]++;
+						j += 6;
+					} else {
+						no[7]++;
+						j += 6;
+					}
+					break;
+
 				}
 
 			}
