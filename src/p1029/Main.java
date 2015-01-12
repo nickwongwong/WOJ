@@ -20,7 +20,10 @@ public class Main {
 			if (!str.equals("$")) {
 				msg = str.toCharArray();
 				for (int i = 0; i < msg.length; i++) {
-					msg[i] = (char) (msg[i] - (i + 1) % 26);
+					if ((i + 1) % 26 <= (int) (msg[i] - 'A'))
+						msg[i] = (char) (msg[i] - (i + 1) % 26);
+					else
+						msg[i] = (char) ('Z' + 1 - ((i + 1) % 26 - (msg[i] - 'A')));
 				}
 				System.out.println(msg);
 			}
