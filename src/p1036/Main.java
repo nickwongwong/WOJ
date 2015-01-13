@@ -1,32 +1,27 @@
-package p1058;
+package p1036;
 
+import java.math.BigInteger;
 import java.util.Scanner;
 
 /**
  * Copyright(C) 2015,Cao Qingqing , Wuhan University All rights reserved.
  * 
- * This class is submitted for solving the problem 1058 in WOJ
+ * This class is submitted for solving the problem 1036 in WOJ
  * 
  * @author : Qingqing Cao, Computer School, Wuhan University
  * 
  */
 public class Main {
-	static long calc(int n) {
-		long groupNo;
-		long groupFirstNo;
-		long result = 0;
-		if (n % 6 == 0) {
-			groupNo = n / 6;
-			groupFirstNo = (3 * groupNo - 2) * groupNo;
-			result = groupFirstNo + 5 * groupNo + 1;
+	static BigInteger calc(int n) {
 
-		} else {
-			groupNo = n / 6 + 1;
-			groupFirstNo = (3 * groupNo - 2) * groupNo;
-			result = groupFirstNo + (n % 6 - 1) * groupNo;
+		BigInteger[] r = new BigInteger[n + 2];
+		r[0] = BigInteger.ONE;
+		r[1] = new BigInteger(2 + "");
+		r[2] = new BigInteger(4 + "");
+		for (int i = 3; i < n; i++) {
+			r[i] = r[i - 1].add(r[i - 2]).add(r[i - 3]);
 		}
-
-		return result;
+		return r[n - 1];
 	}
 
 	public static void main(String args[]) {
