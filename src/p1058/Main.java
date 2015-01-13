@@ -1,5 +1,7 @@
 package p1058;
 
+import java.util.Scanner;
+
 /**
  * Copyright(C) 2015,Cao Qingqing , Wuhan University All rights reserved.
  * 
@@ -9,18 +11,6 @@ package p1058;
  * 
  */
 public class Main {
-	static int f(int n, int m) {
-		if (n == 1 || m == 1)
-			return 1;
-
-		if (n < m)
-			return f(n, n);
-		else if (n == m)
-			return 1 + f(n, m - 1);
-		else
-			return f(n - m, m) + f(n, m - 1);
-	}
-
 	static long calc(int n) {
 		long groupNo;
 		long groupFirstNo;
@@ -40,11 +30,18 @@ public class Main {
 	}
 
 	public static void main(String args[]) {
+		Scanner input = new Scanner(System.in);
 
-		for (int n = 10000; n < 10100; n++) {
-			System.out.println(f(n, 3));
-			System.out.println(calc(n));
+		while (input.hasNext()) {
+			int n = input.nextInt();
+			if (n != 0) {
+
+				System.out.println(calc(n));
+
+			} else
+				break;
+
 		}
-
+		input.close();
 	}
 }
